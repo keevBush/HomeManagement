@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="HomeManagement.Mobile.Views.Components.DeviceTileComponent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mi="http://www.aathifmahir.com/dotnet/2022/maui/icons">
+    <Frame
+        x:Name="BaseLayout"
+        Padding="15,10"
+        BorderColor="Transparent"
+        CornerRadius="30">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+        </Frame.GestureRecognizers>
+        <Grid ColumnDefinitions="*,auto" RowDefinitions="*,auto,auto,auto,0.7*">
+            <Image
+                x:Name="OnOffDeviceTypeImage"
+                Aspect="Center"
+                HeightRequest="60"
+                HorizontalOptions="Start"
+                WidthRequest="40" />
+            <Image
+                x:Name="OnOffDeviceConnectionTypeImage"
+                Grid.Column="1"
+                Margin="0,10,0,0"
+                Aspect="Center"
+                HeightRequest="25"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="25" />
+            <Label
+                x:Name="OnOffDeviceName"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Margin="0,5,0,0"
+                FontAttributes="Bold"
+                TextColor="Black" />
+            <Label
+                x:Name="OnOffDeviceDescription"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Opacity="0.5"
+                TextColor="Black" />
+            <BoxView
+                x:Name="OnOffSeparator"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Margin="0,5"
+                HeightRequest="1.5"
+                Opacity="0.2" />
+            <Label
+                x:Name="OnOffSwitchText"
+                Grid.Row="4"
+                BindingContext="{x:Reference OnOffSwitch}"
+                FontAttributes="Bold"
+                FontSize="Small"
+                Text="{Binding IsToggled, Converter={StaticResource OnOffBoolConverter}}"
+                TextColor="Black"
+                VerticalOptions="Center" />
+            <Switch
+                x:Name="OnOffSwitch"
+                Grid.Row="4"
+                Grid.Column="1"
+                Toggled="OnOffSwitch_Toggled"
+                VerticalOptions="Center" />
+        </Grid>
+    </Frame>
+</ContentView>

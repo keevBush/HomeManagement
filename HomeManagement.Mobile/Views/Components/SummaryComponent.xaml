@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="HomeManagement.Mobile.Views.Components.SummaryComponent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:icon="http://www.aathifmahir.com/dotnet/2022/maui/icons">
+    <Frame
+        Padding="20,15"
+        BackgroundColor="White"
+        BorderColor="Transparent"
+        CornerRadius="20"
+        HasShadow="True">
+        <Grid ColumnDefinitions="auto,*,auto,auto,*,auto,*,auto" RowDefinitions="auto,auto">
+            <Image
+                Grid.RowSpan="2"
+                Source="{icon:Fluent Icon=BrightnessHigh48,
+                                     IconColor=RoyalBlue}"
+                WidthRequest="30" />
+            <Label
+                Grid.Column="1"
+                Margin="0,0"
+                FontAttributes="Bold"
+                Opacity="0.5"
+                Text="motion"
+                TextColor="Black" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="75%"
+                TextColor="Black" />
+            <BoxView
+                Grid.RowSpan="2"
+                Grid.Column="2"
+                Margin="0,5"
+                BackgroundColor="Black"
+                Opacity="0.4"
+                WidthRequest="2.5" />
+
+
+
+            <!--  SECOND  -->
+
+            <Image
+                Grid.RowSpan="2"
+                Grid.Column="3"
+                Margin="10,0"
+                Source="{icon:Fluent Icon=EarthLeaf48,
+                                     IconColor=Green}"
+                WidthRequest="30" />
+            <Label
+                Grid.Column="4"
+                Margin="0,0"
+                FontAttributes="Bold"
+                Opacity="0.5"
+                Text="energy"
+                TextColor="Black" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="4"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="75%"
+                TextColor="Black" />
+            <BoxView
+                Grid.RowSpan="2"
+                Grid.Column="5"
+                Margin="0,5"
+                BackgroundColor="Black"
+                Opacity="0.4"
+                WidthRequest="2.5" />
+
+            <!--  THIRD  -->
+
+            <Image
+                Grid.RowSpan="2"
+                Grid.Column="6"
+                Margin="10,0"
+                Source="{icon:Fluent Icon=Temperature48,
+                                     IconColor=#ffcc00}"
+                WidthRequest="35" />
+            <Label
+                Grid.Column="7"
+                Margin="0,0"
+                FontAttributes="Bold"
+                Opacity="0.5"
+                Text="temp"
+                TextColor="Black" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="7"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="75 C"
+                TextColor="Black" />
+
+        </Grid>
+    </Frame>
+</ContentView>

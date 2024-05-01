@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HomeManagement.Mobile.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:HomeManagement.Mobile.Views.Components"
+    xmlns:icon="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Offset="0.12" Color="#eeecf8" />
+            <GradientStop Offset="1.0" Color="#a89ada" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" VerticalOptions="Start">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Small"
+                Opacity="0.5"
+                Margin="0,10,0,0"
+                Text="Manage Home"
+                TextColor="Black" />
+            <Grid ColumnDefinitions="*,auto">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    TextColor="Black">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Hey, " />
+                            <Span FontAttributes="Bold" Text="Gautam" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <toolkit:AvatarView
+                    Grid.Column="1"
+                    BorderColor="Transparent"
+                    FontAttributes="Bold"
+                    FontAutoScalingEnabled="True"
+                    FontSize="15"
+                    Text="G"
+                    TextColor="#251950"
+                    VerticalOptions="Center">
+                    <toolkit:AvatarView.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Offset="0.1" Color="#dfdaef" />
+                            <GradientStop Offset="1.5" Color="#a89ada" />
+                        </LinearGradientBrush>
+                    </toolkit:AvatarView.Background>
+                </toolkit:AvatarView>
+            </Grid>
+
+            <components:SummaryComponent Margin="0,20" />
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="20"
+                RowDefinitions="auto,auto,auto"
+                RowSpacing="20">
+                <components:DeviceTileComponent
+                    DeviceConnectionTypeImageSource="{icon:Fluent Icon=WifiLock20}"
+                    DeviceDescription="Goove Lamp"
+                    DeviceName="Bedroom lamp"
+                    DeviceTypeImageSource="{icon:Fluent Icon=BrightnessHigh48}"
+                    IsChecked="True"
+                    OffBackground="White"
+                    OnBackground="#26d5ef" />
+                <components:DeviceTileComponent
+                    Grid.Column="1"
+                    DeviceConnectionTypeImageSource="{icon:Fluent Icon=BluetoothConnected24}"
+                    DeviceDescription="Goove Lamp"
+                    DeviceName="Bedroom lamp"
+                    DeviceTypeImageSource="{icon:Fluent Icon=StarEmphasis32}"
+                    IsChecked="True"
+                    OffBackground="White"
+                    OnBackground="#8f4816" />
+
+                <components:DeviceTileComponent
+                    Grid.Row="1"
+                    DeviceConnectionTypeImageSource="{icon:Fluent Icon=WifiLock20}"
+                    DeviceDescription="Goove Lamp"
+                    DeviceName="Bedroom lamp"
+                    DeviceTypeImageSource="{icon:Fluent Icon=Person28}"
+                    IsChecked="True"
+                    OffBackground="White"
+                    OnBackground="DarkOrange" />
+                <components:DeviceTileComponent
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    DeviceConnectionTypeImageSource="{icon:Fluent Icon=Wifi120}"
+                    DeviceDescription="Goove Lamp"
+                    DeviceName="Bedroom lamp"
+                    DeviceTypeImageSource="{icon:Fluent Icon=Tv48}"
+                    IsChecked="True"
+                    OffBackground="White"
+                    OnBackground="DarkViolet" />
+            </Grid>
+
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Click me" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
